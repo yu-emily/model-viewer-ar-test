@@ -215,12 +215,18 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
+  <style>
+    .model{
+      width: fit-content;
+      height: fit-content;
+    }
+  </style>
     <model-viewer src="./skeleton-annotation.glb"
         ios-src="./skeleton-annotation.usdz"
         alt="A 3D model of an skeleton with annotations"
         ar
         auto-rotate
-        camera-controls>
+        camera-controls style="width: 100%; height: 500px;">
     </model-viewer>
 </body>
 </html>
