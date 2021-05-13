@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <style>
+      h1{
+      font-size: 20px;
+      font-family: 'Comic Neue', cursive;
+    }
+    .model{
+      width: fit-content;
+      height: fit-content;
+    }
+
+    .button{
+      border-radius: 50%;
+      margin: 15px;
+      width: 80px; 
+      height: 80px;
+      background-color: #053486;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #annotation{
+        font-size: 16px;
+        background: #bdbdbd;
+        max-width: 200px;
+        padding: 10px;
+        width: max-content;
+        transform: translate(-50px, 35px);
+        border-radius: 15px;
+    }
+
+    #hotspot{
+        background: #053486;
+        border-radius: 32px;
+        border: 0px;
+        height: 24px;
+        width: 24px;
+    }
+    
+  </style>
+    <h1>Stranger than Fiction - Body in Flight</h1>
+    <model-viewer src="./Skeleton.glb"
+        ios-src="./Skeleton.usdz"
+        alt="A 3D model of an skeleton with annotations"
+        ar
+        auto-rotate
+        camera-controls style="width: 100%; height: 450px;">
+        <button slot="ar-button" style="background-color: #053486; border-radius: 4px; color: white; height: 20px; position: absolute; top: 20px; right: 20px; ">
+          View in AR
+        </button>
+        <button id="hotspot" slot="hotspot-4" data-position="-0.042584096478793465m 0.4452539199465321m 0.09973730593943707m" data-normal="0.09863342854448405m 0.3620350906468355m 0.9269315184596422m" data-visibility-attribute="visible">
+            <div id="annotation">
+                <h3>Hypoxia</h3>
+                <p>Hypoxia is described as a state of oxygen deficiency in the blood, tissues, and cells sufficient to cause an impairment of body functions. Any condition that interferes with oxygen's normal path to the cells will bring on hypoxia.</p>
+            </div>
+        </button>
+        <img src="./logoImage.jpg" alt="logo" style="width: 40px; height: 40px; position: absolute; bottom: 10px; left: 10px;">
+    </model-viewer>
+    <div>
+      <div class="button"><a href="./index.html"><img src="previous.png" style="color: white; width: 50px; height: 50px;"></a></div>
+      <div class="button"><a href="./index.html"><img src="next.png" style="width: 50px; height: 50px;"></a></div>
+    </div>
+</body>
+</html>
