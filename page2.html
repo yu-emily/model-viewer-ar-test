@@ -5,19 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
   <style>
-      h1{
-      font-size: 20px;
-      font-family: 'Comic Neue', cursive;
+    .header{
+      font-family: Helvetica, Arial, sans-serif;
+      background-color: #333;
+      color: white;
+      width: 100%;
+      padding: 15px;
     }
-    .model{
+    .header > a, .nav-item{
+      text-decoration: none;
+      color: white;
+    }
+    #title{
+      background-color: #2f3090;
+      font-size: 20px;
+      font-family: 'Comic Neue', Helvetica, Arial, sans-serif;
+      color: white;
+      width: 100%;
+      padding: 15px;
+    }
+    model-viewer{
       width: fit-content;
       height: fit-content;
+      background-color: #d2d2d2;
     }
 
     .button{
@@ -25,7 +45,7 @@
       margin: 15px;
       width: 80px; 
       height: 80px;
-      background-color: #053486;
+      background-color: #2f3090;
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -37,27 +57,40 @@
         max-width: 200px;
         padding: 10px;
         width: max-content;
-        transform: translate(-50px, 35px);
+        transform: translate(-50px, 30px);
         border-radius: 15px;
     }
 
     #hotspot{
         background: #053486;
-        border-radius: 32px;
+        border-radius: 50%;
         border: 0px;
         height: 24px;
         width: 24px;
     }
     
   </style>
-    <h1>Stranger than Fiction - Body in Flight</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark header">
+        <a class="navbar-brand" href="#">THE <b>MUSEUM</b> OF FLIGHT</a>
+        <button class="navbar-toggler" style="color: white;" type="button" data-toggle="collapse" data-target="#navbarMoF" aria-controls="navbarMoF" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarMoF">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">About the Exhibit</a>
+            <a class="nav-item nav-link" href="#">Other Resources</a>
+            <a class="nav-item nav-link" href="#">FAQ</a>
+          </div>
+        </div>
+    </nav>
+    <div id="title">Stranger than Fiction - Body in Flight</div> 
     <model-viewer src="./Skeleton.glb"
         ios-src="./Skeleton.usdz"
         alt="A 3D model of an skeleton with annotations"
         ar
         auto-rotate
         camera-controls style="width: 100%; height: 450px;">
-        <button slot="ar-button" style="background-color: #053486; border-radius: 4px; color: white; height: 20px; position: absolute; top: 20px; right: 20px; ">
+        <button slot="ar-button" style="background-color: #2f3090; border-radius: 4px; border: 2px solid #333; color: white; padding: 10px; height: 45px; position: absolute; top: 20px; right: 20px;">
           View in AR
         </button>
         <button id="hotspot" slot="hotspot-4" data-position="-0.042584096478793465m 0.4452539199465321m 0.09973730593943707m" data-normal="0.09863342854448405m 0.3620350906468355m 0.9269315184596422m" data-visibility-attribute="visible">
